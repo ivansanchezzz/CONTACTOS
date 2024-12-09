@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda de Contactos</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background: #af534c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      max-width: 600px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+    }
+    button {
+      background: #adaf4c;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #a04845;
+    }
+    .form-container {
+      display: none;
+      margin-top: 20px;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    .output {
+      margin-top: 20px;
+      white-space: pre-wrap;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Agenda de Contactos</h1>
+  </header>
+  <main>
+    <div class="menu">
+      <button onclick="showForm('search')">Buscar Contacto</button>
+      <button onclick="showForm('add')">Añadir Contacto</button>
+      <button onclick="showForm('update')">Actualizar Contacto</button>
+      <button onclick="showForm('delete')">Eliminar Contacto</button>
+      <button onclick="exitApp()">Salir</button>
+    </div>
+    <div class="form-container" id="form-container">
+      <form id="contact-form">
+        <input type="text" id="name" placeholder="Nombre (obligatorio para añadir/actualizar)">
+        <input type="text" id="phone" placeholder="Teléfono (11 dígitos)">
+        <button type="button" onclick="submitForm()">Enviar</button>
+      </form>
+    </div>
+    <div class="output" id="output"></div>
+  </main>
+</body>
+<script src="script.js"></script>
+</html>
+
